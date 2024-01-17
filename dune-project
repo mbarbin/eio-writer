@@ -18,8 +18,6 @@
 (package
  (name eio-writer)
  (synopsis "Write to an [Eio.Buf_write] with an api that resembles [Stdio]")
- (description
-  "Write to an [Eio.Buf_write] with an api that resembles [Stdio]")
  (depends
   (ocaml
    (>= 5.1))
