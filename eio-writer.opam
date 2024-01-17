@@ -8,8 +8,8 @@ homepage: "https://github.com/mbarbin/eio-writer"
 doc: "https://mbarbin.github.io/eio-writer/"
 bug-reports: "https://github.com/mbarbin/eio-writer/issues"
 depends: [
+  "dune" {>= "3.12"}
   "ocaml" {>= "5.1"}
-  "dune" {>= "3.11" & >= "3.11"}
   "base" {>= "v0.16" & < "v0.17"}
   "eio" {>= "0.13"}
   "eio_main" {with-test & >= "0.13"}
