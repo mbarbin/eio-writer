@@ -10,7 +10,7 @@ let write_line t str =
   write_newline t
 ;;
 
-let writef t fmt = Stdlib.Format.kasprintf (fun str -> write_string t str) fmt
+let writef t fmt = Eio.Buf_write.printf t fmt
 let write_lines t lines = List.iter lines ~f:(fun line -> write_line t line)
 
 let write_sexp ?(mach = false) t sexp =
