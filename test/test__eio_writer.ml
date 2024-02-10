@@ -12,6 +12,9 @@ let%expect_test "write" =
   Eio_writer.write_sexp w [%sexp { text = "Hello, World!" }];
   Eio_writer.flush w;
   [%expect {| ((text "Hello, World!")) |}];
+  Eio_writer.write_sexp w [%sexp { a = 42; b = "Hello, World!" }] ~mach:true;
+  Eio_writer.flush w;
+  [%expect {| ((a 42)(b"Hello, World!")) |}];
   Eio_writer.writef w "Hello, %s\n" "World!";
   Eio_writer.flush w;
   [%expect {| Hello, World! |}];
@@ -32,6 +35,8 @@ let%expect_test "stdio" =
   Eio_writer.print_sexp ~env [%sexp { text = "Hello, World!" }];
   [%expect {| ((text "Hello, World!")) |}];
   Eio_writer.printf ~env "Hello, %s\n" "World!";
+  [%expect {| Hello, World! |}];
+  Eio_writer.eprintf ~env "Hello, %s\n" "World!";
   [%expect {| Hello, World! |}];
   Eio_writer.aprintf ~env "Hello Value %a\n" Value.pp (Value 42);
   [%expect {| Hello Value value:42 |}];

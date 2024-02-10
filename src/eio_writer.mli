@@ -18,7 +18,8 @@ val write_newline : t -> unit
 val write_line : t -> string -> unit
 val write_lines : t -> string list -> unit
 
-(** Write a sexp followed by a newline character. *)
+(** Write a sexp followed by a newline character. Default to [mach:false], which
+    means uses [Sexp.to_string_hum] by default.*)
 val write_sexp : ?mach:bool -> t -> Sexp.t -> unit
 
 val writef : t -> ('a, Stdlib.Format.formatter, unit) format -> 'a
