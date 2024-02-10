@@ -18,6 +18,11 @@ let%expect_test "write" =
   Eio_writer.writef w "Hello Value %a\n" Value.pp (Value 42);
   Eio_writer.flush w;
   [%expect {| Hello Value value:42 |}];
+  Eio_writer.write_lines w [ "Hello"; "World" ];
+  Eio_writer.flush w;
+  [%expect {|
+    Hello
+    World |}];
   ()
 ;;
 
@@ -30,5 +35,23 @@ let%expect_test "stdio" =
   [%expect {| Hello, World! |}];
   Eio_writer.aprintf ~env "Hello Value %a\n" Value.pp (Value 42);
   [%expect {| Hello Value value:42 |}];
+  Eio_writer.print_endline ~env "Hello";
+  Eio_writer.print_newline ~env;
+  Eio_writer.print_endline ~env "World";
+  [%expect {|
+    Hello
+
+    World |}];
+  Eio_writer.print_lines ~env [ "Hello"; "World" ];
+  [%expect {|
+    Hello
+    World |}];
+  Eio_writer.prerr_endline ~env "Hello";
+  Eio_writer.prerr_newline ~env;
+  Eio_writer.prerr_endline ~env "World";
+  [%expect {|
+    Hello
+
+    World |}];
   ()
 ;;
