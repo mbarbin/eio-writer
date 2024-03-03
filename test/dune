@@ -9,13 +9,8 @@
   -open
   Base
   -open
-  Expect_test_helpers_base)
- (libraries
-  base
-  eio
-  eio_main
-  eio_writer
-  expect_test_helpers_core.expect_test_helpers_base)
+  Expect_test_helpers)
+ (libraries base eio eio_main eio_writer expect-test-helpers)
  (inline_tests)
  (instrumentation
   (backend bisect_ppx))
