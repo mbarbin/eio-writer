@@ -30,11 +30,11 @@
     :dev
     (>= 2.8.3)))
   (eio
-   (>= 0.15))
+   (>= 1.0))
   (eio_main
    (and
     :with-test
-    (>= 0.15)))
+    (>= 1.0)))
   (expect-test-helpers
    (and
     :with-test
