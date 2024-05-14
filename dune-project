@@ -20,7 +20,7 @@
  (synopsis "Write to an [Eio.Buf_write] with an api that resembles [Stdio]")
  (depends
   (ocaml
-   (>= 5.1))
+   (>= 5.2))
   (base
    (and
     (>= v0.17)
