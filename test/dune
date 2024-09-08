@@ -1,5 +1,6 @@
 (library
  (name eio_writer_test)
+ (public_name eio-writer-tests.eio_writer_test)
  (flags
   :standard
   -w
@@ -9,8 +10,13 @@
   -open
   Base
   -open
-  Expect_test_helpers)
- (libraries base eio eio_main eio_writer expect-test-helpers)
+  Expect_test_helpers_base)
+ (libraries
+  base
+  eio
+  eio_main
+  eio_writer
+  expect_test_helpers_core.expect_test_helpers_base)
  (inline_tests)
  (instrumentation
   (backend bisect_ppx))
