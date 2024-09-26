@@ -18,7 +18,7 @@ modules which we took inspiration from in this project. `Stdio` and `Async_unix`
 are released under the terms of an `MIT` License. Their copyright and permission
 notice are included at the root of this project, in the file `LICENSE.janestreet`.
 
-## Code documentation
+## Code Documentation
 
 The code documentation of the latest release is built with `odoc` and published
 to `GitHub` pages [here](https://mbarbin.github.io/eio-writer).
